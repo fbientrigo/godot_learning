@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/RK4_Harmonic.gd" type="Script" id=1]
+[ext_resource path="res://Planet/Planet_KB.tscn" type="PackedScene" id=2]
+
+[node name="Root" type="Node2D"]
+position = Vector2( 1, 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Planet2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 334, 222 )
+script = ExtResource( 1 )
+b_use_initial_position = false
+velocity = Vector2( 0, 0 )
+omega = 0.314159
+
+[node name="Planet" parent="." instance=ExtResource( 2 )]
+position = Vector2( 548, 102 )
+script = ExtResource( 1 )
+b_use_initial_position = false
+velocity = Vector2( 0, 0 )
+omega = 0.314159
+
+[node name="Planet3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 93, 195 )
+script = ExtResource( 1 )
+defined_initial_positon = Vector2( 200, 200 )
+b_use_initial_position = true
+velocity = Vector2( 0, 0 )
+omega = 0.314159

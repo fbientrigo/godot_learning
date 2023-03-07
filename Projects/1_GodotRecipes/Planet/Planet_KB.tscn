@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Planet/Planet.gd" type="Script" id=1]
+[ext_resource path="res://Planet/planeta.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/RK4_Harmonic.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle_Planet"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 120 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 50.0
+
+[node name="Planet" type="KinematicBody2D"]
+position = Vector2( 203, 102 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 7.62939e-06, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+hframes = 11
+vframes = 11
+frame = 27
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlanet" type="AnimationPlayer" parent="."]
+anims/Idle_Planet = SubResource( 4 )
+anims/RESET = SubResource( 20 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}

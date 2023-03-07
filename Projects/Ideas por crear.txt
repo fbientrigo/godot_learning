@@ -1,0 +1,13 @@
+Una input de personaje, un proyecto que permite moverse WASD
+y que incluya movimiento de camara asi como distinta capacidad de tiling
+
+
+que dispare objetos
+	- juego donde le disparas besitos al corazoncito de la girlfriend jeje <3
+
+luego que dispare lasers
+
+
+
+
+agregar enemigos 
