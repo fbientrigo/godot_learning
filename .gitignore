@@ -7,3 +7,8 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 data_*/
+
+
+# godot 
+Godot_v4.0-stable_win64.exe
+Godot_v4.0-stable_win64_console.exe
